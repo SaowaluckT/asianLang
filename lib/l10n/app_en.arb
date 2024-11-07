@@ -1,0 +1,10 @@
+{
+  "@@locale": "en",
+  "dictionaryTitle": "Dictionary",
+  "appTitle": "Dictionary App",
+  "showDataButton": "Show Data",
+  "searchWordLabel": "Search Word:",
+  "enterWordHint": "Enter a word",
+  "searchButton": "Search",
+  "notebooks": "Notebooks"
+}
