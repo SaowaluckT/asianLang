@@ -1,8 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:my_app/data/services/translate_service.dart';
-import 'package:my_app/presentation/dictionary_page.dart';
+
+import '../../app/di.dart';
+import '../dictionary_page.dart';
+import 'home_viewmodel.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,6 +13,23 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final HomeViewModel _viewModel = instance<HomeViewModel>();
+
+  _bind() {
+    _viewModel.start();
+  }
+
+  @override
+  void initState() {
+    _bind();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _viewModel.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +45,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Expanded(
             child: FutureBuilder<Map<String, String>>(
-              future: TranslateService.loadTranslations(),
+              future: _viewModel.loadTranslation(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const CircularProgressIndicator();

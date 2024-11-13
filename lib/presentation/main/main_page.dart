@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/presentation/home_page.dart';
+import 'package:my_app/presentation/home/home_page.dart';
 import 'package:my_app/presentation/resources/color_manager.dart';
 import 'package:my_app/presentation/resources/styles_manager.dart';
-import 'package:my_app/presentation/resources/values_manager.dart';
 
 import '../notebook/notebooks_page.dart';
 import '../vocabulary/vocabularies_page.dart';

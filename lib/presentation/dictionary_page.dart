@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/presentation/translation_page.dart';
 
+import '../app/di.dart';
+import '../app/routes_manager.dart';
+import 'translation/translation_page.dart';
+
 
 
 class DictionaryPage extends StatefulWidget {
@@ -48,10 +52,7 @@ class _DictionaryPageState extends State<DictionaryPage> {
                   contentPadding: EdgeInsets.zero,
                 ),
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute<void>(
-                        builder: (_) => const TranslationPage()),
-                  );
+                  Navigator.pushNamed(context, Routes.translationRoute);
                 },
               ),
             ),

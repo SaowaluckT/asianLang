@@ -78,21 +78,23 @@ class _VocabularyEditContentPageState extends State<VocabularyEditContentPage> w
     KeywordModel data = _keyword!;
     data.notebookName = _keyword?.notebookName ?? "Default notepad";
     String searchWord = _resultTextController.text;
-    try {
-      // Fetch translation
-      final String translatedText = await TranslateService.translate(searchWord, widget.keywordContent!.translatedLanguageCode!);
-      final translationsWithPronunciation = await TranslateService.loadTranslations();
-      _wordResultPinyin = await TranslateService.translateToPinyin(
-        searchWord,
-      );
+    //todo
 
-      print("translatePinyin: $_wordResultPinyin");
-      data.translated = translatedText;
-      data.word = searchWord;
-    } catch (e) {
-      // Handle errors
-      print("_transalator catch (e) >> $e");
-    }
+    // try {
+    //   // Fetch translation
+    //   final String translatedText = await TranslateService.translate(searchWord, widget.keywordContent!.translatedLanguageCode!);
+    //   final translationsWithPronunciation = await TranslateService.loadTranslations();
+    //   _wordResultPinyin = await TranslateService.translateToPinyin(
+    //     searchWord,
+    //   );
+    //
+    //   print("translatePinyin: $_wordResultPinyin");
+    //   data.translated = translatedText;
+    //   data.word = searchWord;
+    // } catch (e) {
+    //   // Handle errors
+    //   print("_transalator catch (e) >> $e");
+    // }
     return data;
   }
 
